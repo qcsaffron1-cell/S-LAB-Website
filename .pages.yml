@@ -109,7 +109,7 @@ content:
         type: string
 
   - name: activities
-    label: ข่าวสารและกิจกรรม (ตัวแก้ไข JSON)
+    label: ข่าวสารและกิจกรรม
     type: file
     path: json/activities.json
     format: code
