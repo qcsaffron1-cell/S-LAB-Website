@@ -7,20 +7,109 @@ content:
     label: สินค้าทั่วไป
     type: file
     path: json/products.json
-    format: code
-    options:
-      language: json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: รหัสสินค้า (ห้ามเปลี่ยน)
+        type: string
+        required: true
+        readonly: true
+      - name: title
+        label: ชื่อสินค้า (ภาษาอังกฤษ)
+        type: string
+        required: true
+      - name: thai
+        label: ชื่อสินค้า (ภาษาไทย)
+        type: string
+        required: true
+      - name: category
+        label: หมวดหมู่
+        type: string
+      - name: registration
+        label: เลขจดแจ้ง/ทะเบียน
+        type: string
+      - name: size
+        label: ขนาดบรรจุ
+        type: string
+      - name: use
+        label: วิธีใช้
+        type: string
+        list: true
+      - name: ingredients
+        label: ส่วนประกอบ
+        type: string
+        list: true
+      - name: img
+        label: รูปภาพหลัก
+        type: image
+      - name: gallery
+        label: รูปภาพแกลเลอรี
+        type: image
+        list: true
+      - name: slug
+        label: URL สินค้า (ห้ามเปลี่ยนโดยไม่จำเป็น)
+        type: string
+      - name: relatedGroup
+        label: กลุ่มสินค้าที่เกี่ยวข้อง
+        type: string
 
   - name: herbal-products
     label: สินค้าสมุนไพร
     type: file
     path: json/herbal-products.json
-    format: code
-    options:
-      language: json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: รหัสสินค้า (ห้ามเปลี่ยน)
+        type: string
+        required: true
+        readonly: true
+      - name: title
+        label: ชื่อสินค้า (ภาษาอังกฤษ)
+        type: string
+        required: true
+      - name: thai
+        label: ชื่อสินค้า (ภาษาไทย)
+        type: string
+        required: true
+      - name: category
+        label: หมวดหมู่
+        type: string
+      - name: registration
+        label: เลขจดแจ้ง/ทะเบียน
+        type: string
+      - name: size
+        label: ขนาดบรรจุ
+        type: string
+      - name: use
+        label: วิธีใช้
+        type: string
+        list: true
+      - name: ingredients
+        label: ส่วนประกอบ
+        type: string
+        list: true
+      - name: img
+        label: รูปภาพหลัก
+        type: image
+      - name: gallery
+        label: รูปภาพแกลเลอรี
+        type: image
+        list: true
+      - name: herbalType
+        label: ประเภทสมุนไพร
+        type: string
+      - name: slug
+        label: URL สินค้า (ห้ามเปลี่ยนโดยไม่จำเป็น)
+        type: string
+      - name: relatedGroup
+        label: กลุ่มสินค้าที่เกี่ยวข้อง
+        type: string
 
   - name: activities
-    label: ข่าวสารและกิจกรรม
+    label: ข่าวสารและกิจกรรม (ตัวแก้ไข JSON)
     type: file
     path: json/activities.json
     format: code
