@@ -1,5 +1,7 @@
 /* S-LAB v20 bundle: site.js */
 
+/* [อธิบาย S-LAB] บทบาทไฟล์: พฤติกรรมส่วนกลางของทุกหน้า ได้แก่ เมนูนำทาง ปุ่มย้อนขึ้นด้านบน แอนิเมชันตามการเลื่อน ตัวเลข/หัวข้อเคลื่อนไหว สไลเดอร์ หน้าต่างดูภาพ ใบรับรอง แบบฟอร์มสอบถาม และตัวโหลดหน้าเว็บไซต์ */
+
 /* ===== BEGIN navigation, shared behavior, no Stats width scaling ===== */
 (function(){
   'use strict';
@@ -39,6 +41,7 @@
     else link.removeAttribute('aria-current');
   });
 
+  // [อธิบาย S-LAB] ตรวจว่าหน้าจออยู่ในช่วงเดสก์ท็อปเพื่อเลือกพฤติกรรมเมนูให้เหมาะกับอุปกรณ์.
   function isDesktop(){ return window.matchMedia ? window.matchMedia('(min-width: 1280px)').matches : window.innerWidth >= 1280; }
   function setMenu(open, returnFocus){
     links.classList.toggle('open', open);
@@ -303,6 +306,7 @@
   });
 
   /* ---------- 6. Animated counters ---------- */
+  // [อธิบาย S-LAB] ค่อย ๆ เพิ่มตัวเลขสถิติจากค่าเริ่มต้นไปยังค่าเป้าหมายเมื่อส่วนสถิติแสดงบนหน้าจอ.
   function animateCounter(el) {
     var target = parseFloat(el.getAttribute('data-target') || '0');
     var decimals = (el.getAttribute('data-target') || '').includes('.') ? 1 : 0;
@@ -458,6 +462,7 @@
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // [อธิบาย S-LAB] ตั้งค่าตัวเลื่อนภาพและใบรับรอง: ปุ่มก่อน/ถัดไป จุดนำทาง การลาก การปรับความสูง และเล่นอัตโนมัติ.
   function init(root) {
     var track = root.querySelector('[data-slider-track]');
     if (!track) return;
@@ -645,6 +650,7 @@
   var dragging = false, startX = 0, startY = 0, originX = 0, originY = 0;
   var previousFocus = null;
 
+  // [อธิบาย S-LAB] จำกัดตำแหน่งเลื่อนภาพซูมไม่ให้ภาพหลุดออกนอกกรอบหน้าต่าง.
   function clampPan() {
     if (!viewImage.naturalWidth || !viewImage.naturalHeight) return;
     var rect = stage.getBoundingClientRect();
@@ -824,6 +830,7 @@
   let isSubmitting = false;
   let submitResetTimer = null;
 
+  // [อธิบาย S-LAB] เปลี่ยนข้อความ/สถานะของปุ่มส่งแบบฟอร์มตามสถานะกำลังส่ง สำเร็จ หรือผิดพลาด.
   function setSubmitState(state) {
     if (!submitButton) return;
     submitButton.dataset.submitState = state;
@@ -871,6 +878,7 @@
     if (option) categoryField.value = option.value;
   }
 
+  // [อธิบาย S-LAB] เปิดหน้าต่างแจ้งผลการส่งแบบฟอร์มและตั้งค่าหัวข้อ ข้อความ และไอคอน.
   function openModal(type, title, message) {
     if (!modal) return;
     modalIcon.textContent = type === 'success' ? '✓' : '!';
@@ -997,6 +1005,7 @@
   var loader = document.getElementById('siteLoader');
   if (!loader) return;
   var finished = false;
+  // [อธิบาย S-LAB] ซ่อนตัวโหลดหน้าเมื่อโหลดเสร็จหรือเมื่อถึงเวลาสำรอง เพื่อไม่ให้บังหน้าเว็บค้าง.
   function finishLoading() {
     if (finished) return;
     finished = true;
