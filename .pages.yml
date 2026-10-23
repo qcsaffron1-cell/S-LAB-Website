@@ -1,0 +1,94 @@
+
+media:
+  input: images/products
+  output: images/products
+
+content:
+  - name: products
+    label: สินค้าทั่วไป
+    type: collection
+    path: json
+    format: json
+    filename: "{primary}.json"
+    match: "products"
+    fields:
+      - name: title
+        label: ชื่อสินค้า (อังกฤษ)
+        type: string
+      - name: thai
+        label: ชื่อสินค้า (ไทย)
+        type: string
+      - name: category
+        label: หมวดหมู่
+        type: string
+      - name: registration
+        label: เลขทะเบียน
+        type: string
+      - name: size
+        label: ขนาดบรรจุ
+        type: string
+      - name: use
+        label: วิธีใช้
+        type: text
+      - name: ingredients
+        label: ส่วนประกอบ
+        type: text
+      - name: img
+        label: รูปสินค้าหลัก
+        type: image
+      - name: gallery
+        label: รูปภาพเพิ่มเติม
+        type: image
+        list: true
+      - name: slug
+        label: Slug
+        type: string
+      - name: relatedGroup
+        label: กลุ่มสินค้าที่เกี่ยวข้อง
+        type: string
+
+  - name: herbal
+    label: สินค้าสมุนไพร
+    type: collection
+    path: json
+    format: json
+    filename: "{primary}.json"
+    match: "herbal-products"
+    fields:
+      - name: title
+        label: ชื่อสินค้า (อังกฤษ)
+        type: string
+      - name: thai
+        label: ชื่อสินค้า (ไทย)
+        type: string
+      - name: category
+        label: หมวดหมู่
+        type: string
+      - name: registration
+        label: เลขทะเบียน
+        type: string
+      - name: size
+        label: ขนาดบรรจุ
+        type: string
+      - name: use
+        label: วิธีใช้
+        type: text
+      - name: ingredients
+        label: ส่วนประกอบ
+        type: text
+      - name: img
+        label: รูปสินค้าหลัก
+        type: image
+      - name: gallery
+        label: รูปภาพเพิ่มเติม
+        type: image
+        list: true
+      - name: herbalType
+        label: ประเภทสมุนไพร
+        type: string
+      - name: slug
+        label: Slug
+        type: string
+      - name: relatedGroup
+        label: กลุ่มสินค้าที่เกี่ยวข้อง
+        type: string
