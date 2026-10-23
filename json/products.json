@@ -1,5 +1,6 @@
 [
   {
+    "id": "hair-dye-dark-brown",
     "title": "Hair Dye Shampoo Natural Dark Brown",
     "thai": "แชมพูเปลี่ยนสีผม น้ำตาลประกายทองธรรมชาติ",
     "category": "HAIR CARE",
@@ -21,10 +22,10 @@
       "images/products/hair-dye-dark-brown.png"
     ],
     "slug": "hair-dye-shampoo-natural-dark-brown",
-    "relatedGroup": "hair-color-shampoo",
-    "id": "hair-dye-dark-brown"
+    "relatedGroup": "hair-color-shampoo"
   },
   {
+    "id": "hair-dye-chestnut-red-brown",
     "title": "Hair Dye Shampoo Natural Chestnut Red Brown",
     "thai": "แชมพูเปลี่ยนสีผม สีน้ำตาลอมแดง",
     "category": "HAIR CARE",
@@ -46,10 +47,10 @@
       "images/products/hair-dye-chestnut-red-brown.png"
     ],
     "slug": "hair-dye-shampoo-natural-chestnut-red-brown",
-    "relatedGroup": "hair-color-shampoo",
-    "id": "hair-dye-chestnut-red-brown"
+    "relatedGroup": "hair-color-shampoo"
   },
   {
+    "id": "hair-dye-natural-black",
     "title": "Hair Dye Shampoo Natural Black",
     "thai": "แชมพูเปลี่ยนสีผม สีดำธรรมชาติ",
     "category": "HAIR CARE",
@@ -71,10 +72,10 @@
       "images/products/hair-dye-natural-black.png"
     ],
     "slug": "hair-dye-shampoo-natural-black",
-    "relatedGroup": "hair-color-shampoo",
-    "id": "hair-dye-natural-black"
+    "relatedGroup": "hair-color-shampoo"
   },
   {
+    "id": "hair-dye-light-brown",
     "title": "Hair Dye Shampoo Natural Light Brown",
     "thai": "แชมพูเปลี่ยนสีผม น้ำตาลประกายทอง",
     "category": "HAIR CARE",
@@ -96,10 +97,10 @@
       "images/products/hair-dye-light-brown.png"
     ],
     "slug": "hair-dye-shampoo-natural-light-brown",
-    "relatedGroup": "hair-color-shampoo",
-    "id": "hair-dye-light-brown"
+    "relatedGroup": "hair-color-shampoo"
   },
   {
+    "id": "primperfect-toothpaste",
     "title": "Primperfect Toothpaste",
     "thai": "ยาสีฟันสมุนไพร PRIM PERFECT",
     "category": "ORAL CARE",
@@ -123,18 +124,16 @@
       "images/products/primperfect-toothpaste.png"
     ],
     "slug": "primperfect-herbal-toothpaste",
-    "relatedGroup": "toothpaste",
-    "id": "primperfect-toothpaste"
+    "relatedGroup": "toothpaste"
   },
   {
+    "id": "herbal-whintening-fluoride-toothpaste",
     "title": "Herbal Whitening Fluoride Toothpaste",
     "thai": "ยาสีฟันสมุนไพร สูตรผสมฟลูออไรด์",
     "category": "ORAL CARE",
     "registration": "20-1-6600029957",
     "size": "50 กรัม",
-    "use": [
-      "บีบยาสีฟันลงบนแปรงในปริมาณเท่าเมล็ดถั่วเขียว ใช้แปรงทำความสะอาดฟัน อย่างน้อยวันละ 2 ครั้ง เช้าและก่อนนอน หรือหลังอาหาร เพื่อผลลัพธ์ที่ดีควรใช้อย่างต่อเนื่อง"
-    ],
+    "use": "บีบยาสีฟันลงบนแปรงในปริมาณเท่าเมล็ดถั่วเขียว ใช้แปรงทำความสะอาดฟัน อย่างน้อยวันละ 2 ครั้ง เช้าและก่อนนอน หรือหลังอาหาร เพื่อผลลัพธ์ที่ดีควรใช้อย่างต่อเนื่อง",
     "ingredients": [
       "ฟลูออไรด์",
       "เมนทอล",
@@ -155,36 +154,32 @@
       "images/products/herbal-whintening-fluoride-toothpaste_2.png"
     ],
     "slug": "herbal-fluoride-toothpaste",
-    "relatedGroup": "toothpaste",
-    "id": "herbal-whintening-fluoride-toothpaste"
+    "relatedGroup": "toothpaste"
   },
   {
+    "id": "thai-herbal-scrub-cleansing",
     "title": "Thai Herbal Scrub Cleansing Salt with Moisturizer",
     "thai": "เกลือขัดผิว สูตรเจ้าสาว",
     "category": "BODY CARE",
     "registration": "10-1-5746141",
     "size": "400 กรัม",
-    "use": [
-      "ก่อนใช้ คนเนื้อเกลือสมุนไพรให้เข้ากันก่อน แล้วชโลมสมุนไพรให้ทั่วผิวกายรอให้แห้ง ขัดเบาๆ แล้วล้างออกด้วยน้ำสะอาด"
-    ],
+    "use": "ก่อนใช้ คนเนื้อเกลือสมุนไพรให้เข้ากันก่อน แล้วชโลมสมุนไพรให้ทั่วผิวกายรอให้แห้ง ขัดเบาๆ แล้วล้างออกด้วยน้ำสะอาด",
     "ingredients": "-",
     "img": "images/products/thai-herbal-scrub-cleansing.png",
     "gallery": [
       "images/products/thai-herbal-scrub-cleansing.png"
     ],
     "slug": "thai-herbal-scrub-cleansing-salt",
-    "relatedGroup": "body-scrub",
-    "id": "thai-herbal-scrub-cleansing"
+    "relatedGroup": "body-scrub"
   },
   {
+    "id": "glycerin-soap",
     "title": "Tamarind Transparent Glycerine Soap",
     "thai": "สบู่ใสกลีเซอรีน มะขาม+น้ำผึ้ง สูตรสำหรับผิวหมองคล้ำ",
     "category": "FACE CARE",
     "registration": "20-1-5600488",
     "size": "40 กรัม",
-    "use": [
-      "ใช้ทำความสะอาดผิวหน้า ได้ตามต้องการ"
-    ],
+    "use": "ใช้ทำความสะอาดผิวหน้า ได้ตามต้องการ",
     "ingredients": [
       "มะขาม",
       "น้ำผึ้ง"
@@ -194,72 +189,64 @@
       "images/products/glycerin-soap.png"
     ],
     "slug": "tamarind-honey-glycerin-soap",
-    "relatedGroup": "face-care",
-    "id": "glycerin-soap"
+    "relatedGroup": "face-care"
   },
   {
+    "id": "scentio-avocado",
     "title": "Scentio Avocado Brightening Sherbet Scrub",
     "thai": "เซนทิโอ อะโวคาโด ไบร์เทนนิ่ง เชอร์เบท สครับ",
     "category": "BODY CARE",
     "registration": "10-1-5304697",
     "size": "350 มิลลิลิตร",
-    "use": [
-      "ทาสคับลงบนผิวกายที่เปียกนวดให้ทั่ว แล้วล้างออกด้วยน้ำสะอาด"
-    ],
+    "use": "ทาสคับลงบนผิวกายที่เปียกนวดให้ทั่ว แล้วล้างออกด้วยน้ำสะอาด",
     "ingredients": "-",
     "img": "images/products/scentio-avocado.png",
     "gallery": [
       "images/products/scentio-avocado.png"
     ],
     "slug": "scentio-avocado-brightening-sherbet-scrub",
-    "relatedGroup": "body-scrub",
-    "id": "scentio-avocado"
+    "relatedGroup": "body-scrub"
   },
   {
+    "id": "scentio-raspberry",
     "title": "Scentio Raspberry Pore Minimizing Sherbet Scrub",
     "thai": "เซนทิโอ ราสเบอร์รี่ พอร์มินิไมซิ่ง เชอร์เบท สครับ",
     "category": "BODY CARE",
     "registration": "10-1-5304704",
     "size": "350 มิลลิลิตร",
-    "use": [
-      "ทาสคับลงบนผิวกายที่เปียกนวดให้ทั่ว แล้วล้างออกด้วยน้ำสะอาด"
-    ],
+    "use": "ทาสคับลงบนผิวกายที่เปียกนวดให้ทั่ว แล้วล้างออกด้วยน้ำสะอาด",
     "ingredients": "-",
     "img": "images/products/scentio-raspberry.png",
     "gallery": [
       "images/products/scentio-raspberry.png"
     ],
     "slug": "scentio-raspberry-pore-minimizing-sherbet-scrub",
-    "relatedGroup": "body-scrub",
-    "id": "scentio-raspberry"
+    "relatedGroup": "body-scrub"
   },
   {
+    "id": "scentio-apricot",
     "title": "Scentio Apricot Anti-Aging Sherbet Scrub",
     "thai": "เซนทิโอ แอพริคอท แอนตี้-เอจจิ้ง เชอร์เบท สครับ",
     "category": "BODY CARE",
     "registration": "10-1-5304701",
     "size": "350 มิลลิลิตร",
-    "use": [
-      "ทาสคับลงบนผิวกายที่เปียกนวดให้ทั่ว แล้วล้างออกด้วยน้ำสะอาด"
-    ],
+    "use": "ทาสคับลงบนผิวกายที่เปียกนวดให้ทั่ว แล้วล้างออกด้วยน้ำสะอาด",
     "ingredients": "-",
     "img": "images/products/scentio-apricot.png",
     "gallery": [
       "images/products/scentio-apricot.png"
     ],
     "slug": "scentio-apricot-anti-aging-sherbet-scrub",
-    "relatedGroup": "body-scrub",
-    "id": "scentio-apricot"
+    "relatedGroup": "body-scrub"
   },
   {
+    "id": "fitt-herbal-mouth-spray",
     "title": "FITT Herbal Mouth spray",
     "thai": "ฟิตท์ เฮอร์เบิล เม้าท์ สเปรย์",
     "category": "ORAL CARE",
     "registration": "20-1-6400031191",
     "size": "15 มิลลิลิตร",
-    "use": [
-      "ฉีดสเปรย์ภายในช่องปาก 1-2 ครั้ง ใช้ได้บ่อยครั้งตามต้องการ"
-    ],
+    "use": "ฉีดสเปรย์ภายในช่องปาก 1-2 ครั้ง ใช้ได้บ่อยครั้งตามต้องการ",
     "ingredients": [
       "สารสกัดโพรพอลิสเข้มข้น",
       "ชะเอมเทศ",
@@ -273,18 +260,16 @@
       "images/products/fitt-herbal-mouth-spray.png"
     ],
     "slug": "fitt-herbal-mouth-spray",
-    "relatedGroup": "oral-mouth-spray",
-    "id": "fitt-herbal-mouth-spray"
+    "relatedGroup": "oral-mouth-spray"
   },
   {
+    "id": "fitt-androlis-mouth-spray",
     "title": "FITT Androlis Mouth Spray",
     "thai": "ฟิตท์ แอนโดรลิส เม้าท์ สเปรย์",
     "category": "ORAL CARE",
     "registration": "20-1-6500032010",
     "size": "15 มิลลิลิตร",
-    "use": [
-      "ฉีดสเปรย์ภายในช่องปาก 1-2 ครั้ง ใช้ได้บ่อยครั้งตามต้องการ"
-    ],
+    "use": "ฉีดสเปรย์ภายในช่องปาก 1-2 ครั้ง ใช้ได้บ่อยครั้งตามต้องการ",
     "ingredients": [
       "ฟ้าทะลายโจร",
       "สารสกัดโพรพอลิสเข้มข้น",
@@ -300,10 +285,10 @@
       "images/products/fitt-androlis-mouth-spray.png"
     ],
     "slug": "fitt-androlis-mouth-spray",
-    "relatedGroup": "oral-mouth-spray",
-    "id": "fitt-androlis-mouth-spray"
+    "relatedGroup": "oral-mouth-spray"
   },
   {
+    "id": "butterfly-pea-shampoo",
     "title": "Butterfly Pea Shampoo",
     "thai": "แชมพูสระผม สูตรอัญชัน",
     "category": "HAIR CARE",
@@ -325,10 +310,10 @@
       "images/products/butterfly-pea-shampoo.png"
     ],
     "slug": "butterfly-pea-shampoo",
-    "relatedGroup": "herbal-hair-shampoo",
-    "id": "butterfly-pea-shampoo"
+    "relatedGroup": "herbal-hair-shampoo"
   },
   {
+    "id": "kaffir-lime-shampoo",
     "title": "Kaffir Lime Herbal Extract Shampoo",
     "thai": "แชมพูสระผมสมุนไพร สูตรมะกรูด",
     "category": "HAIR CARE",
@@ -350,10 +335,10 @@
       "images/products/kaffir-lime-shampoo.png"
     ],
     "slug": "kaffir-lime-herbal-shampoo",
-    "relatedGroup": "herbal-hair-shampoo",
-    "id": "kaffir-lime-shampoo"
+    "relatedGroup": "herbal-hair-shampoo"
   },
   {
+    "id": "coconut-oil-herbal-shampoo",
     "title": "Coconut Oil Herbal Shampoo",
     "thai": "แชมพูสระผมสมุนไพร สูตรมะพร้าว",
     "category": "HAIR CARE",
@@ -375,18 +360,16 @@
       "images/products/coconut-oil-herbal-shampoo.png"
     ],
     "slug": "coconut-oil-herbal-shampoo",
-    "relatedGroup": "herbal-hair-shampoo",
-    "id": "coconut-oil-herbal-shampoo"
+    "relatedGroup": "herbal-hair-shampoo"
   },
   {
+    "id": "acne-free-botanical-gel",
     "title": "Acne Free Botanical Gel",
     "thai": "เจลแต้มสิว สมุนไพร",
     "category": "FACE CARE",
     "registration": "20-1-6700004883",
     "size": "10 กรัม",
-    "use": [
-      "ใช้แต้มบริเวณหัวสิว เช้า และก่อนนอน เป็นประจำทุกวัน"
-    ],
+    "use": "ใช้แต้มบริเวณหัวสิว เช้า และก่อนนอน เป็นประจำทุกวัน",
     "ingredients": [
       "ชะเอมเทศ",
       "ว่านหางจระเข้",
@@ -399,7 +382,6 @@
       "images/products/acne-free-botanical-gel.png"
     ],
     "slug": "acne-free-botanical-gel",
-    "relatedGroup": "face-care",
-    "id": "acne-free-botanical-gel"
+    "relatedGroup": "face-care"
   }
 ]
