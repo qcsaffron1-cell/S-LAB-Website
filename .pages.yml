@@ -34,11 +34,11 @@ content:
         type: string
       - name: use
         label: วิธีใช้
-        type: string
+        type: text
         list: true
       - name: ingredients
         label: ส่วนประกอบ
-        type: string
+        type: text
         list: true
       - name: img
         label: รูปภาพหลัก
@@ -85,11 +85,10 @@ content:
         type: string
       - name: use
         label: วิธีใช้
-        type: string
-        list: true
+        type: text
       - name: ingredients
         label: ส่วนประกอบ
-        type: string
+        type: text
         list: true
       - name: img
         label: รูปภาพหลัก
@@ -112,6 +111,31 @@ content:
     label: ข่าวสารและกิจกรรม
     type: file
     path: json/activities.json
-    format: code
-    options:
-      language: json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: รหัสกิจกรรม (ห้ามเปลี่ยน)
+        type: string
+        required: true
+        readonly: true
+      - name: title
+        label: ชื่อกิจกรรม
+        type: string
+        required: true
+      - name: date
+        label: วันที่
+        type: string
+      - name: image
+        label: รูปภาพกิจกรรม
+        type: image
+      - name: category
+        label: หมวดหมู่
+        type: string
+      - name: excerpt
+        label: คำโปรย
+        type: text
+      - name: body
+        label: เนื้อหากิจกรรม
+        type: text
+        list: true
