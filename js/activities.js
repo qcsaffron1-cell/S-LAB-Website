@@ -1,5 +1,7 @@
 /* S-LAB v20 bundle: activities.js */
 
+/* [อธิบาย S-LAB] บทบาทไฟล์: โหลดข้อมูลกิจกรรมจาก JSON แล้วแสดงการ์ดกิจกรรมบนหน้าแรก หน้ารายการกิจกรรม และหน้ารายละเอียดบทความ */
+
 /* ===== BEGIN activity data loader ===== */
 /* S-LAB · ACTIVITY DATA LOADER
    Activity content is maintained in json/activities.json.
@@ -9,6 +11,7 @@
   var ACTIVITIES_URL = 'json/activities.json';
   var cache = null;
 
+  // [อธิบาย S-LAB] โหลดไฟล์ json/activities.json และแคชคำขอเพื่อป้องกันการโหลดซ้ำโดยไม่จำเป็น.
   function loadActivities() {
     if (cache) return cache;
     cache = fetch(ACTIVITIES_URL, { cache: 'no-cache', headers: { 'Accept': 'application/json' } })
@@ -17,7 +20,20 @@
         return res.json();
       })
       .then(function (data) {
-        if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('activities.json must contain an object.');
+        // Pages CMS edits activities as a list of records; existing pages still receive an ID-keyed object.
+        if (Array.isArray(data)) {
+          var mapped = {};
+          data.forEach(function (item, index) {
+            if (item && item.id != null) {
+              var record = Object.assign({}, item);
+              var id = String(record.id);
+              delete record.id;
+              mapped[id] = record;
+            }
+          });
+          return mapped;
+        }
+        if (!data || typeof data !== 'object') throw new Error('activities.json must contain activity records.');
         return data;
       })
       .catch(function (err) {
@@ -64,6 +80,7 @@
   function escapeHtml(value) {
     return String(value == null ? '' : value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
   }
+  // [อธิบาย S-LAB] สร้างการ์ดรายการกิจกรรมจากข้อมูล JSON แล้วใส่ลงในพื้นที่ activityList.
   function init(data) {
     var grid = document.getElementById('activityList');
     if (!grid) return;
@@ -93,6 +110,7 @@
   function escapeHtml(value) {
     return String(value == null ? '' : value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
   }
+  // [อธิบาย S-LAB] อ่านรหัสกิจกรรมจาก URL แล้วแสดงรายละเอียดบทความและลิงก์บทความอื่นที่เกี่ยวข้อง.
   function init(data) {
     var detail = document.getElementById('articleDetail');
     var related = document.getElementById('relatedArticles');
