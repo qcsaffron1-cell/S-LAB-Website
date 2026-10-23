@@ -1,5 +1,7 @@
 /* S-LAB v20 bundle: catalog.js */
 
+/* [อธิบาย S-LAB] บทบาทไฟล์: โหลดและรวมข้อมูลผลิตภัณฑ์จาก JSON สร้างรายการสินค้าเด่น/แคตตาล็อก ค้นหาและกรองหมวดหมู่ รวมทั้งเติมรายละเอียดและผลิตภัณฑ์ที่เกี่ยวข้อง */
+
 /* ===== BEGIN product data loader (general + herbal JSON) ===== */
 /* S-LAB Product Data Loader
    General products: json/products.json
@@ -14,6 +16,7 @@
   var herbalCache = null;
   var mergedCache = null;
 
+  // [อธิบาย S-LAB] อ่านไฟล์ JSON ตรวจ HTTP และตรวจว่าข้อมูลเป็น object ก่อนนำไปใช้งาน.
   function fetchObject(url, required) {
     return fetch(url, { cache: 'no-cache', headers: { 'Accept': 'application/json' } })
       .then(function (res) {
@@ -21,8 +24,21 @@
         return res.json();
       })
       .then(function (data) {
-        if (!data || typeof data !== 'object' || Array.isArray(data)) {
-          throw new Error(url + ' must contain a JSON object keyed by product ID.');
+        // Pages CMS stores form-editable records as an array; convert to the keyed map expected by existing pages.
+        if (Array.isArray(data)) {
+          var mapped = {};
+          data.forEach(function (item) {
+            if (item && item.id != null) {
+              var record = Object.assign({}, item);
+              var id = String(record.id);
+              delete record.id;
+              mapped[id] = record;
+            }
+          });
+          return mapped;
+        }
+        if (!data || typeof data !== 'object') {
+          throw new Error(url + ' must contain product records.');
         }
         return data;
       })
@@ -35,6 +51,7 @@
       });
   }
 
+  // [อธิบาย S-LAB] โหลดข้อมูลผลิตภัณฑ์ทั่วไปพร้อมเก็บผลลัพธ์ไว้ใช้ซ้ำ.
   function loadGeneralProducts() {
     if (!generalCache) {
       generalCache = fetchObject(PRODUCTS_URL, true).catch(function (err) {
@@ -45,6 +62,7 @@
     return generalCache;
   }
 
+  // [อธิบาย S-LAB] โหลดข้อมูลเฉพาะผลิตภัณฑ์สมุนไพร โดยข้อมูลชุดนี้เป็นส่วนเสริมที่ไม่บังคับ.
   function loadHerbalProducts() {
     if (!herbalCache) {
       herbalCache = fetchObject(HERBAL_URL, false).catch(function (err) {
@@ -55,6 +73,7 @@
     return herbalCache;
   }
 
+  // [อธิบาย S-LAB] รวมข้อมูลผลิตภัณฑ์ทั้งสองชุด โดยให้ข้อมูลสมุนไพรมีสิทธิ์ทับซ้อนเมื่อ ID ซ้ำ.
   function loadProducts() {
     if (!mergedCache) {
       mergedCache = Promise.all([loadGeneralProducts(), loadHerbalProducts()])
@@ -116,6 +135,7 @@
       .replace(/"/g,'&quot;').replace(/'/g,'&#039;');
   }
 
+  // [อธิบาย S-LAB] ประกอบข้อมูลหนึ่งรายการให้เป็นการ์ดผลิตภัณฑ์สำหรับหน้าแรก.
   function makeCard(item, index){
     var title = item.title || 'Saffron Product';
     var thai = item.thai || title;
@@ -135,6 +155,7 @@
       + '</a>';
   }
 
+  // [อธิบาย S-LAB] เลือกผลิตภัณฑ์เด่นตามลำดับที่กำหนด และเติมรายการสำรองหากข้อมูลบางรายการไม่มี.
   function chooseFeatured(data){
     var products = data || {};
     var values = Object.keys(products).map(function(id){
@@ -163,6 +184,7 @@
     featured = featured.slice(0, 4);
   }
 
+  // [อธิบาย S-LAB] แสดงหรืออัปเดตรายการผลิตภัณฑ์เด่นลงในพื้นที่ของหน้าแรก.
   function updateUI(){
     return;
   }
@@ -218,6 +240,7 @@
     var activeFilter = validCategories.indexOf(requestedCategory) !== -1 ? requestedCategory : 'all';
     var query = '';
 
+    // [อธิบาย S-LAB] ตรวจว่าสินค้าตรงกับข้อความค้นหาและหมวดหมู่ที่ผู้ใช้เลือกหรือไม่.
     function matches(item) {
       var p = item.product;
       var haystack = [p.title, p.thai, p.category, p.registration, p.size].join(' ').toLowerCase();
@@ -227,6 +250,7 @@
       return textOK && catOK;
     }
 
+    // [อธิบาย S-LAB] สร้าง markup ของการ์ดสินค้าในแคตตาล็อก โดยใช้ข้อมูลของสินค้าแต่ละรายการ.
     function card(item, index) {
       var p = item.product;
       var href = window.slabProductHref(item.id, p);
@@ -249,6 +273,7 @@
       '</a>';
     }
 
+    // [อธิบาย S-LAB] เรนเดอร์รายการสินค้าที่ผ่านตัวกรองลงในพื้นที่รายการผลิตภัณฑ์.
     function render() {
       list.setAttribute('aria-busy', 'true');
       var visible = entries.filter(matches);
@@ -453,6 +478,7 @@
       }).join('');
     }
 
+    // [อธิบาย S-LAB] เปลี่ยนประเภทสมุนไพรที่เลือกและสั่งแสดงรายการใหม่ตามประเภทนั้น.
     function selectType(type) {
       var selectedButton = null;
       buttons.forEach(function (button) {
